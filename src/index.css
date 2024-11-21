@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('https://cdn.jsdelivr.net/gh/berkeleygraphics/berkeley-mono@main/berkeley-mono.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --terminal-bg: #000000;
+  --terminal-border: #333333;
+  --terminal-text: #FFFFFF;
+  --terminal-accent: #808080;
+}
+
+body {
+  @apply bg-black;
+  font-family: 'Berkeley Mono', monospace;
+}
+
+.react-grid-item {
+  @apply overflow-hidden;
+}
+
+.react-grid-item.react-grid-placeholder {
+  @apply bg-neutral-900/50;
+}
+
+.react-resizable-handle {
+  @apply bg-neutral-800;
+}
+
+.terminal-header {
+  @apply text-neutral-400 font-normal uppercase tracking-wider text-sm;
+}
+
+.terminal-widget {
+  @apply bg-black border border-neutral-800 rounded-none;
+  box-shadow: 0 0 0 1px rgba(51, 51, 51, 0.5);
+}
+
+.terminal-input {
+  @apply bg-black border border-neutral-800 text-white font-mono px-3 py-2 w-full focus:outline-none focus:border-neutral-600;
+}
+
+.terminal-button {
+  @apply bg-neutral-900 border border-neutral-800 text-white px-4 py-2 hover:border-neutral-600 transition-colors;
+}
+
+.terminal-table {
+  @apply w-full border-collapse;
+}
+
+.terminal-table th {
+  @apply text-left p-2 border-b border-neutral-800 text-neutral-400 font-normal;
+}
+
+.terminal-table td {
+  @apply p-2 border-b border-neutral-800 text-white;
+}
+
+.add-widget-button {
+  @apply fixed bottom-6 right-6 bg-neutral-800 text-white w-12 h-12 flex items-center justify-center rounded-none hover:bg-neutral-700 transition-colors z-40;
+}
+
+.widget-button {
+  @apply p-2 hover:bg-neutral-800 transition-colors rounded-sm;
+}
